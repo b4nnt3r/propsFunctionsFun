@@ -1,94 +1,19 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
+import BaseLayout from './Baselayout';
+import ChildComponent from './Childcomponent';
+import DisplayComponent from './Displaycomponent';
+import Footer from './Footer';
+import Header from './Header';
+import ParentComponent from './Parentcomponent';
 
-
-class Header extends Component {
-  render() {
-    return (
-      <nav>Navigation Bar</nav>
-    );
-  }
-}
-
-class Footer extends Component {
-  render() {
-    return (
-      <footer>Footer</footer>
-    );
-  }
-}
-
-class BaseLayout extends Component {
-  render() {
-    return (
-      <div>This should house Header and Footer components and be able to house any children components.</div>
-    );
-  }
-}
-
-class ParentComponent extends Component {
-  constructor(props){
-    super(props);
-
-    this.handleInput = this.handleInput.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-
-    //state lives here
-    this.state = {
-      whatToSay: "",
-      whatWasSaid: "",
-    }
-  }
-  handleInput(e) {
-    e.preventDefault();
-    //set the state on input change
-    this.setState({whatToSay: this.state.whatToSay});
-  }
-  handleSubmit(e) {
-    e.preventDefault();
-    //check console to see if firing
-    console.log("fired");
-    //set the state for props and for value (prevents output from appearing when typing)
-    this.setState({whatToSay: this.state.whatToSay, whatWasSaid: this.state.whatToSay});
-    //clear our input by resetting state
-    this.setState({whatToSay: ""});
-
-  }
-  render() {
-    return (
-      <div>Smart Component: I have a functio, but something isnt working? I also need to pass that functio to the ChildComponent.
-        <div>
-          <input onChange={this.handleInput} type="text" placeholder="Say It, Don't Spray It!" />
-        </div>
-        <div>
-          <ChildComponent onClick={this.props.onClick}/>
-          <DisplayComponent sayWhat={this.props.sayWhat} />
-        </div>
-      </div>
-    );
-  }
-}
-
-class ChildComponent extends Component {
-  render() {
-    return (
-      <div>Dumb Component receiving Props
-        <div>
-          <input type="submit" onClick={this.props.onClick}/>
-        </div>
-      </div>
-    );
-  }
-}
-
-class DisplayComponent extends Component {
-  render() {
-    return (
-      <div>{this.props.sayWhat}</div>
-    );
-  }
-}
-
+<div>
+  <Header />
+  <ChildComponent />
+  <DisplayComponent />
+  <Footer />
+  <ParentComponent />
+</div>
 
 class App extends Component {
   render() {
