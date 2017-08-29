@@ -61,8 +61,8 @@ class ParentComponent extends Component {
           <input onChange={this.handleInput} type="text" placeholder="Say It, Don't Spray It!" />
         </div>
         <div>
-          <ChildComponent onClick={"FILL_ME_IN"}/>
-          <DisplayComponent sayWhat={"FILL_ME_IN"} />
+          <ChildComponent onClick={this.props.onClick}/>
+          <DisplayComponent sayWhat={this.props.sayWhat} />
         </div>
       </div>
     );
