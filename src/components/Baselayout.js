@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import Header from '../components/Header.js';
-import Footer from '../components/Footer.js';
+import Header from './Header';
 
 class BaseLayout extends Component {
   render() {
@@ -10,7 +9,6 @@ class BaseLayout extends Component {
         <div className="row justify-content-center">
           {this.props.children}
         </div>
-        <Footer/>
       </div>
     );
   }
