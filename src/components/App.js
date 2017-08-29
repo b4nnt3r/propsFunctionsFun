@@ -5,7 +5,7 @@ import '../styles/App.css';
 class Header extends Component {
   render() {
     return (
-      <nav>I am the Navigation Bar</nav>
+      <nav>Navigation Bar</nav>
     );
   }
 }
@@ -13,7 +13,7 @@ class Header extends Component {
 class Footer extends Component {
   render() {
     return (
-      <footer>I am the Footer</footer>
+      <footer>Footer</footer>
     );
   }
 }
@@ -30,8 +30,8 @@ class ParentComponent extends Component {
   constructor(props){
     super(props);
 
-    //we are really in a *bind* here.... :)
-    //fix it...
+    this.handleInput = this.handleInput.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
 
     //state lives here
     this.state = {

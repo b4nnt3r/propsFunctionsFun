@@ -5,13 +5,11 @@ import DisplayComponent from '../components/Displaycomponent.js';
 class ParentComponent extends Component {
   constructor(props) {
     super(props);
-    //state lives here
     this.state = {
       whatToSay: "",
       whatWasSaid: ""
     }
-    //we are really in a *bind* here.... :)
-    //fix it...
+
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
@@ -24,7 +22,6 @@ class ParentComponent extends Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    //check console to see if firing
     console.log("fired");
     //set the state for props and for value (prevents output from appearing when typing)
     this.setState({whatToSay: this.state.whatToSay, whatWasSaid: this.state.whatToSay});

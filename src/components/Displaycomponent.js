@@ -5,7 +5,7 @@ class DisplayComponent extends Component {
     return (
       <div className="card">
         <div className="card-body">
-          <h4 className="card-title">State, props, children, function, fun!</h4>
+          <h4 className="card-title">State, props, children, functio, fun!</h4>
           <h6 className="card-subtitle mb-2 text-muted">Message</h6>
           <p className="card-text">{this.props.sayWhat}</p>
         </div>
